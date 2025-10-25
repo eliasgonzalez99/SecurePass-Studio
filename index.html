@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePass Studio</title>
+    
+</head>
+<body>
+    <link rel="stylesheet" href="style.css">
+    <canvas class="matrix-bg"></canvas>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">SECUREPASS</div>
+            <div class="subtitle">STUDIO</div>
+        </div>
+
+        <div class="password-display">
+            <div class="password-text" id="passwordText">Genera tu contraseña...</div>
+            <div class="strength-bar">
+                <div class="strength-fill" id="strengthFill"></div>
+            </div>
+            <div class="strength-text" id="strengthText">Fuerza: --</div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Longitud</span>
+                    <span id="lengthValue">16</span>
+                </div>
+                <input type="range" class="slider" id="lengthSlider" min="8" max="64" value="16">
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="uppercase" checked>
+                <label for="uppercase">Mayúsculas (A-Z)</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="lowercase" checked>
+                <label for="lowercase">Minúsculas (a-z)</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="numbers" checked>
+                <label for="numbers">Números (0-9)</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="symbols" checked>
+                <label for="symbols">Símbolos (!@#$%)</label>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-generate" id="generateBtn">GENERAR</button>
+            <button class="btn btn-copy" id="copyBtn">COPIAR</button>
+        </div>
+
+        <div class="mode-toggle">
+            <button class="toggle-btn" id="proModeBtn">🔒 MODO PRO</button>
+        </div>
+
+        <div class="pro-mode" id="proMode">
+            <div class="pro-title">
+                <span>⚡</span>
+                <span>ANÁLISIS AVANZADO</span>
+            </div>
+            <div class="pro-item">
+                <div class="pro-label">Entropía (bits)</div>
+                <div class="pro-value" id="entropy">--</div>
+            </div>
+            <div class="pro-item">
+                <div class="pro-label">SHA-256 Hash</div>
+                <div class="pro-value" id="hash">--</div>
+            </div>
+            <div class="pro-item">
+                <div class="pro-label">Tiempo de crackeo estimado</div>
+                <div class="pro-value" id="crackTime">--</div>
+            </div>
+        </div>
+    </div>
+
+<script src="app.js"></script>
+</body>
+</html>
